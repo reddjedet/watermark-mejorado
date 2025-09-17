@@ -12,11 +12,11 @@ def add_watermark_overlay(input_image_path, output_image_path, watermark_text, c
         
         # Determinar el color de la marca de agua basado en la elección
         if color_choice == '1':
-            text_color = (0, 0, 0, 128)
-            line_color = (0, 0, 0, 30)
+            text_color = (22, 22, 29, 128) # MODIFICAR
+            line_color = (22, 22, 29, 10) # MODIFICAR
         else:
-            text_color = (255, 255, 255, 128)
-            line_color = (255, 255, 255, 30)
+            text_color = (233, 233, 226, 108) # MODIFICAR
+            line_color = (233, 233, 226, 10) # MODIFICAR
 
         # 1. Crear una capa de superposición para las líneas
         lines_overlay = Image.new("RGBA", input_image.size, (255, 255, 255, 0))
@@ -94,11 +94,11 @@ def add_watermark_overlay(input_image_path, output_image_path, watermark_text, c
 
 input_folder = "Assets"
 output_folder = "Assets/watermarkeadas"
-watermark_text = "TEXTO TEXTO TEXTO TEXTO"
+watermark_text = "TEXTO UNO\ntexto dos"
 
 print("Elige el estilo de la marca de agua:")
-print("1: Estilo oscuro (letras más visibles, líneas tenues)")
-print("2: Estilo claro (letras más visibles, líneas tenues)")
+print("1: Oscuro")
+print("2: Claro")
 color_choice = input("Ingresa tu opción (1 o 2): ")
 
 if not os.path.exists(output_folder):
